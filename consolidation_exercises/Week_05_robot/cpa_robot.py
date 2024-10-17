@@ -7,6 +7,7 @@ _x = 0.
 _y = 0.
 _theta = 0.
 
+
 history = [(_x,_y,_theta)]
 
 def reset_robot(x_init = 0.0, y_init=0.0, theta_init = 0.0):
@@ -137,7 +138,7 @@ def animate_path():
         sensors_line.set_xdata([p[0] for p in sensors_global])
         sensors_line.set_ydata([p[1] for p in sensors_global])
         return path_line, robot_line, sensors_line
-    ani = animation.FuncAnimation(fig=fig, func=update, frames=range(0,len(history),10), interval=15)
+    ani = animation.FuncAnimation(fig=fig, func=update, frames=range(0,len(history),1000), interval=15)
     plt.show()
 
 def _demo_robot():
